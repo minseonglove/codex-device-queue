@@ -1,0 +1,17 @@
+{
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Codex Device Queue",
+    "shortDescription": "Exclusive physical-device access across Codex sessions",
+    "longDescription": "Automatic per-device coordination plus status, cancel, release and recovery skills. No manual Python commands or ownership-token handling for users.",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ]
+  },
+  "name": "codex-device-queue",
+  "version": "1.0.0",
+  "description": "Share physical devices across Codex sessions with per-device queues and exclusive grants.",
+  "skills": "./skills/"
+}

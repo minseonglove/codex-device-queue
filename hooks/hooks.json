@@ -1,0 +1,32 @@
+{
+  "description": "Require shared per-device queue grants before physical-device work.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact|fork",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/hooks/session_start.py\"",
+            "timeout": 5,
+            "statusMessage": "Loading physical-device queue rules",
+            "commandWindows": "call \"${PLUGIN_ROOT}/hooks/session_start.cmd\""
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/hooks/session_start.py\"",
+            "timeout": 5,
+            "statusMessage": "Loading physical-device queue rules",
+            "commandWindows": "call \"${PLUGIN_ROOT}/hooks/session_start.cmd\""
+          }
+        ]
+      }
+    ]
+  }
+}
